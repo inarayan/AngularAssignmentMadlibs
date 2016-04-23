@@ -1,0 +1,43 @@
+.header-page{
+    border-bottom-style:solid;
+    border-color: black;
+
+}
+
+.full-body{
+
+    border-style:solid;
+}
+
+.happy-face-header{
+    border-right-style: solid;
+}
+
+.happy-face-logo{
+    padding-left: 12%;
+
+}
+
+.wordstochoose{
+
+    margin-bottom:1rem;
+
+}
+
+.words-block{
+
+    border-style: solid;
+    border-radius: 1em;
+}
+.body-container{
+    border-right:solid;
+    border-left:solid;
+    border-bottom: solid;
+
+}
+
+.fillthewords{
+    padding-top:4em;
+    padding-bottom: 4em;
+    border-top-style: solid;
+}
