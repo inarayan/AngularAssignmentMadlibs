@@ -42,9 +42,9 @@
             </div>
 
             <div class="row fillthewords">
-                <p>{{female_name}}was a {{job_title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious_task}} and {{dirty_task}}.
-                    So, {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so she studied programming instead.
-                    What a great decision! With her new skills, {{female_name}} built a(n) {{adjective}} robot named {{obnoxious_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster. </p>
+                <p><a ng-show="female_name === undefined || female_name ===''">[female name]</a>{{female_name}} was a <a ng-show="job_title === undefined || job_title ===''">[job title]</a>{{job_title}} who loved technology. Although she loved parts of her job, she absolutely hated<a ng-show="tedious_task === undefined || tedious_task ===''">[tedious task]</a>  {{tedious_task}} and <a ng-show="dirty_task === undefined || dirty_task ===''">[dirty task]</a>{{dirty_task}}.
+                    So,<a ng-show="female_name === undefined || female_name ===''">[female name]</a> {{female_name}} met with her life mentor <a ng-show="celebrity === undefined || celebrity ===''">[Celebrity]</a>{{celebrity}} who told her to learn how to <a ng-show="useless_skill === undefined || useless_skill ===''">[useless skill]</a>{{useless_skill}} with Thinkful. Thinkful didn't offer a course on <a ng-show="useless_skill === undefined || useless_skill ===''">[useless skill]</a>{{useless_skill}} so she studied programming instead.
+                    What a great decision! With her new skills, <a ng-show="female_name === undefined || female_name ===''">[female name]</a>{{female_name}} built a(n) <a ng-show="adjective === undefined || adjective ===''">[adjective]</a>{{adjective}} robot named <a ng-show="obnoxious_celebrity === undefined || obnoxious_celebrity ===''">[obnoxious celebrity]</a>{{obnoxious_celebrity}} that not only loved <a ng-show="dirty_task === undefined || dirty_task ===''">[dirty task]</a>{{dirty_task}} but did it <a ng-show="huge_number === undefined || huge_number ===''">[huge number]</a>{{huge_number}} faster. </p>
             </div>
 
     </div>
