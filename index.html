@@ -10,7 +10,7 @@
 
 
 
-    <div class="container full-body" ng-controller="myCtrl">
+    <div class="container full-body" ng-controller="myCtrl" >
 
             <div class="row header-page">
 
@@ -22,46 +22,56 @@
 
             </div>
 
+            <form name="madlibform" novalidate ng-submit="submit()">
+                <div class="madlibwordschoose"  ng-if="!madlibform.$submitted">
+                <div class="row wordstochoose">
+                            <div class="col-md-12">
+                                <h1 style="text-align: left; margin-left: -10px;">Provide the following words</h1>
+                            </div>
 
-            <div class="row wordstochoose">
-                    <div class="col-md-12">
-                        <h1 style="text-align: left; margin-left: -10px;">Provide the following words</h1>
+                            <div class="'col-md-12">
+                                Choose a gender for this madlib game
+                                <select name="gender" ng-model="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+
+                            <input type="text" name="female_name" class="col-md-3 words-block" placeholder='female/male name' ng-model="female_name"  required ng-minlength="2"/> <div class="col-md-1"><span class="error" ng-if="madlibform.$submitted && madlibform.female_name.$error.required">
+    A name is required!
+</span></div>
+                            <input type="text" name="dirty_task" class="col-md-3 words-block" placeholder="Dirty task" ng-model="dirty_task"/><div class="col-md-1"></div>
+                            <input type="text" name="obnoxious_celebrity" class="col-md-3 words-block" placeholder="Obnoxious celebrity" ng-model="obnoxious_celebrity"/><div class="col-md-1"></div>
+
                     </div>
-
-                    <div class="'col-md-12">
-                        Choose a gender for this madlib game
-                        <select name="gender" ng-model="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                <div class="row wordstochoose">
+                            <input type="text" name="job_title" class="col-md-3 words-block" placeholder="Job title" ng-model="job_title"/><div class="col-md-1"></div>
+                            <input type="text" name="celebrity" class="col-md-3 words-block" placeholder="Celebrity" ng-model="celebrity"/><div class="col-md-1"></div>
+                            <input type="text" name="huge_number" class="col-md-3 words-block" placeholder="Huge number" ng-model="huge_number"/><div class="col-md-1"></div>
                     </div>
+                <div class="row wordstochoose">
+                            <input type="text" name="tedious_task" class="col-md-3 words-block" placeholder="Tedious task" ng-model="tedious_task"/><div class="col-md-1"></div>
+                            <input type="text" name="useless_skill" class="col-md-3 words-block" placeholder="Useless skill" ng-model="useless_skill"/><div class="col-md-1"></div>
+                            <input type="text" name="adjective" class="col-md-3 words-block" placeholder="Adjective" ng-model="adjective"/><div class="col-md-1"></div>
+                    </div>
+                <input style="text-align: right" type="submit"  value="Generate My Madlib" />
+                </div>
 
-                    <input type="text" name="female_name" class="col-md-3 words-block" placeholder='female/male name' ng-model="female_name"/><div class="col-md-1"></div>
-                    <input type="text" name="dirty_task" class="col-md-3 words-block" placeholder="Dirty task" ng-model="dirty_task"/><div class="col-md-1"></div>
-                    <input type="text" name="obnoxious_celebrity" class="col-md-3 words-block" placeholder="Obnoxious celebrity" ng-model="obnoxious_celebrity"/><div class="col-md-1"></div>
-
-            </div>
-            <div class="row wordstochoose">
-                    <input type="text" name="job_title" class="col-md-3 words-block" placeholder="Job title" ng-model="job_title"/><div class="col-md-1"></div>
-                    <input type="text" name="celebrity" class="col-md-3 words-block" placeholder="Celebrity" ng-model="celebrity"/><div class="col-md-1"></div>
-                    <input type="text" name="huge_number" class="col-md-3 words-block" placeholder="Huge number" ng-model="huge_number"/><div class="col-md-1"></div>
-            </div>
-            <div class="row wordstochoose">
-                    <input type="text" name="tedious_task" class="col-md-3 words-block" placeholder="Tedious task" ng-model="tedious_task"/><div class="col-md-1"></div>
-                    <input type="text" name="useless_skill" class="col-md-3 words-block" placeholder="Useless skill" ng-model="useless_skill"/><div class="col-md-1"></div>
-                    <input type="text" name="adjective" class="col-md-3 words-block" placeholder="Adjective" ng-model="adjective"/><div class="col-md-1"></div>
-            </div>
-
-            <div class="row fillthewords">
-                <p><a ng-show="female_name === undefined || female_name ===''">[female/male name]</a>{{female_name}} was a <a ng-show="job_title === undefined || job_title ===''">[job title]</a>{{job_title}} who loved technology. Although <a ng-show="gender==='male'">he</a><a ng-show="gender==='female'">she</a>  loved parts of <a ng-show="gender==='male'">his</a><a ng-show="gender==='female'">her</a> job, <a ng-show="gender==='male'">he</a><a ng-show="gender==='female'">she</a> absolutely hated<a ng-show="tedious_task === undefined || tedious_task ===''">[tedious task]</a>  {{tedious_task}} and <a ng-show="dirty_task === undefined || dirty_task ===''">[dirty task]</a>{{dirty_task}}.
-                    So,<a ng-show="female_name === undefined || female_name ===''">[female name]</a> {{female_name}} met with <span ng-show="gender==='male'">his</span><a ng-show="gender==='female'">her</a> life mentor <a ng-show="celebrity === undefined || celebrity ===''">[Celebrity]</a>{{celebrity}} who told <a ng-show="gender==='male'">his</a><a ng-show="gender==='female'">her</a> to learn how to <a ng-show="useless_skill === undefined || useless_skill ===''">[useless skill]</a>{{useless_skill}} with Thinkful. Thinkful didn't offer a course on <a ng-show="useless_skill === undefined || useless_skill ===''">[useless skill]</a>{{useless_skill}} so <a ng-show="gender==='male'">he</a><a ng-show="gender==='female'">she</a> studied programming instead.
-                    What a great decision! With <a ng-show="gender==='male'">his</a><a ng-show="gender==='female'">her</a> new skills, <a ng-show="female_name === undefined || female_name ===''">[female/male name]</a>{{female_name}} built a(n) <a ng-show="adjective === undefined || adjective ===''">[adjective]</a>{{adjective}} robot named <a ng-show="obnoxious_celebrity === undefined || obnoxious_celebrity ===''">[obnoxious celebrity]</a>{{obnoxious_celebrity}} that not only loved <a ng-show="dirty_task === undefined || dirty_task ===''">[dirty task]</a>{{dirty_task}} but did it <a ng-show="huge_number === undefined || huge_number ===''">[huge number]</a>{{huge_number}} faster. </p>
-            </div>
+                <div ng-show="madlibform.$submitted">
+                <div  class="row fillthewords">
+                        <p><a ng-show="female_name === undefined || female_name ===''">[female/male name]</a>{{female_name}} was a <a ng-show="job_title === undefined || job_title ===''">[job title]</a>{{job_title}} who loved technology. Although <a ng-show="gender==='male'">he</a><a ng-show="gender==='female'">she</a>  loved parts of <a ng-show="gender==='male'">his</a><a ng-show="gender==='female'">her</a> job, <a ng-show="gender==='male'">he</a><a ng-show="gender==='female'">she</a> absolutely hated<a ng-show="tedious_task === undefined || tedious_task ===''">[tedious task]</a>  {{tedious_task}} and <a ng-show="dirty_task === undefined || dirty_task ===''">[dirty task]</a>{{dirty_task}}.
+                            So,<a ng-show="female_name === undefined || female_name ===''">[female name]</a> {{female_name}} met with <span ng-show="gender==='male'">his</span><a ng-show="gender==='female'">her</a> life mentor <a ng-show="celebrity === undefined || celebrity ===''">[Celebrity]</a>{{celebrity}} who told <a ng-show="gender==='male'">his</a><a ng-show="gender==='female'">her</a> to learn how to <a ng-show="useless_skill === undefined || useless_skill ===''">[useless skill]</a>{{useless_skill}} with Thinkful. Thinkful didn't offer a course on <a ng-show="useless_skill === undefined || useless_skill ===''">[useless skill]</a>{{useless_skill}} so <a ng-show="gender==='male'">he</a><a ng-show="gender==='female'">she</a> studied programming instead.
+                            What a great decision! With <a ng-show="gender==='male'">his</a><a ng-show="gender==='female'">her</a> new skills, <a ng-show="female_name === undefined || female_name ===''">[female/male name]</a>{{female_name}} built a(n) <a ng-show="adjective === undefined || adjective ===''">[adjective]</a>{{adjective}} robot named <a ng-show="obnoxious_celebrity === undefined || obnoxious_celebrity ===''">[obnoxious celebrity]</a>{{obnoxious_celebrity}} that not only loved <a ng-show="dirty_task === undefined || dirty_task ===''">[dirty task]</a>{{dirty_task}} but did it <a ng-show="huge_number === undefined || huge_number ===''">[huge number]</a>{{huge_number}} faster. </p>
+                </div>
+                <input type="button" value="Start Over" ng-click="resetfunc()"/>
+                </div>
+            </form>
 
     </div>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 
 </body>
